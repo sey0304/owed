@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitcount+Prop+Double:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Owed</title>
+</head>
+
+<body>
+
+<header>
+    <h1>Owed</h1>
+    <p class="sub">Your flight was late. The airline may owe you up to &euro;600.</p>
+</header>
+
+<main>
+
+    <section class="card warn">
+        <h2>Read this first</h2>
+        <ul>
+            <li>This tool is a guide, not legal advice. It was not written by a lawyer.</li>
+            <li>Always check the official EU page before you claim:
+                <a href="https://europa.eu/youreurope/citizens/travel/passenger-rights/air/index_en.htm" target="_blank" rel="noopener">Your Europe &ndash; Air passenger rights</a>
+            </li>
+            <li>Rules change. These figures are for flights disrupted in 2026.</li>
+            <li>Nothing you type here leaves your computer.</li>
+        </ul>
+    </section>
+
+    <section class="card">
+
+        <h2>1. Where did you fly?</h2>
+
+        <label for="from">From</label>
+        <input type="text" id="from" placeholder="Tokyo Haneda (HND)">
+
+        <label for="to">To</label>
+        <input type="text" id="to" placeholder="London Heathrow (LHR)">
+
+        <p id="distanceOut" class="note"></p>
+
+        <h2>2. How late were you?</h2>
+
+        <label for="hours">Hours late arriving at your final destination</label>
+        <input type="number" id="hours" min="0" step="0.5" placeholder="4">
+
+        <h2>3. Why was it late?</h2>
+
+        <label for="reason">Reason the airline gave</label>
+        <select id="reason">
+            <option value="unknown">They didn't say / I don't know</option>
+            <option value="technical">Technical problem with the plane</option>
+            <option value="crew">Crew problem or airline strike</option>
+            <option value="overbooking">Overbooked</option>
+            <option value="weather">Bad weather</option>
+            <option value="atc">Air traffic control strike or restriction</option>
+            <option value="security">Security threat or political unrest</option>
+        </select>
+
+        <h2>4. Was the flight connected to the EU?</h2>
+
+        <label for="route">Pick the one that matches</label>
+        <select id="route">
+            <option value="none">Neither of the below</option>
+            <option value="departEU">It took off from an EU airport</option>
+            <option value="arriveEU">It landed in the EU on an EU airline</option>
+        </select>
+
+        <button id="check">Check what you are owed</button>
+
+    </section>
+
+    <section id="result" class="card" hidden></section>
+
+    <section id="letterBox" class="card" hidden>
+        <h2>Your claim letter</h2>
+        <p class="note">Copy this and send it to the airline yourself. You keep 100&#37;.</p>
+        <textarea id="letter" rows="18" readonly></textarea>
+        <button id="copy">Copy letter</button>
+    </section>
+
+</main>
+
+<footer>
+    <p>Amounts follow EU Regulation 261/2004. Distances are great-circle estimates.</p>
+</footer>
+
+<script src="airports.js"></script>
+<script src="owed.js"></script>
+</body>
+</html>
