@@ -148,7 +148,7 @@ button:active{
     font-size: 18px;
     background: transparent;
     border-style: dashed;
-    box-shadow: none;
+    box-shadow: 4px 4px 16px rgba(0,0,0,0.08);
 }
 
 .card ul{
