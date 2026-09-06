@@ -101,6 +101,9 @@ botan.addEventListener("click", function(){
         iro = "good";
         midashi = "You are probably owed &euro;" + "<samp>" + kane + "</samp>";
         honbun = "Distance " + km + " km, delayed " + jikan + " hours. A technical fault, a crew problem, or overbooking is the airline's own problem &mdash; they cannot use it as an excuse.";
+        if(Math.abs(km - 1500) <= 30 || Math.abs(km - 3500) <= 30){
+            honbun = honbun + "This flight is close to a distance boundary, so the amount could be one band higher or lower. Check the exact distance with the airline before you claim."
+        }
     }
 
     kekka.hidden = false;
