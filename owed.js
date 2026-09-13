@@ -103,11 +103,16 @@ botan.addEventListener("click", function(){
         honbun = "Distance " + km + " km, delayed " + jikan + " hours. A technical fault, a crew problem, or overbooking is the airline's own problem &mdash; they cannot use it as an excuse.";
         if(Math.abs(km - 1500) <= 30 ){ 
             midashi = "You are probably owed &euro;" + "<samp>" + "250 or 400" + "</samp>"
-            honbun = honbun + "This flight is close to a distance boundary, so the amount could be one band higher or lower. Check the exact distance with the airline before you claim."
+            honbun = honbun + "This flight is close to a distance boundary, so the amount could be one band higher or lower. Check the exact distance with the airline before you claim.";
         }    
         if(Math.abs(km - 3500) <= 30){
             midashi = midashi = "You are probably owed &euro;" + "<samp>" + "400 or 600" + "</samp>"
-              honbun = honbun + "This flight is close to a distance boundary, so the amount could be one band higher or lower. Check the exact distance with the airline before you claim."
+              honbun = honbun + "This flight is close to a distance boundary, so the amount could be one band higher or lower. Check the exact distance with the airline before you claim.";
+        }
+        if(km > 3500 && 4 >= jikan && jikan >= 3){
+            midashi = "You are probably owed €300 or 600";
+            honbun = honbun + " On flights over 3,500 km, if you arrived no more than 4 hours late, the airline is allowed to pay half. If they offer €300, that can be correct.";
+
         }
 }
 
